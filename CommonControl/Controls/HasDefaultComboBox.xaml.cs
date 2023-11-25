@@ -36,7 +36,7 @@ namespace CommonControl.Controls
 
         public bool IsDefaultIndex
         {
-            get { return SelectedIndex == DefalutIndex; }
+            get { return /*SelectedIndex*/ 1 == DefalutIndex; }
         }
     }
 }
