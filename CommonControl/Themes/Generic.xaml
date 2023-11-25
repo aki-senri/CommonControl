@@ -6,6 +6,7 @@
     <ControlTemplate x:Key="DefaultSelectTemplate" TargetType="{x:Type local:CustomComboBox}">
         <ComboBox
             x:Name="PART_ComboBox"
+            Foreground="{TemplateBinding Foreground}"
             IsEditable="False"
             ItemsSource="{TemplateBinding ItemsSource}"
             SelectedIndex="{TemplateBinding SelectedIndex}"
@@ -22,6 +23,7 @@
                         BorderThickness="{TemplateBinding BorderThickness}">
                         <ComboBox
                             x:Name="PART_ComboBox"
+                            Foreground="{TemplateBinding Foreground}"
                             IsEditable="False"
                             ItemsSource="{TemplateBinding ItemsSource}"
                             SelectedIndex="{TemplateBinding SelectedIndex}"
