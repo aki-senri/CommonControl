@@ -28,7 +28,6 @@ namespace CommonControl.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CustomComboBox), new FrameworkPropertyMetadata(typeof(CustomComboBox)));
             DefalutIndexProperty = DependencyProperty.Register("DefalutIndex", typeof(int), typeof(CustomComboBox), new FrameworkPropertyMetadata(-1 ));
             IsDefaultIndexProperty = DependencyProperty.Register("IsDefaultIndex", typeof(bool), typeof(CustomComboBox), new FrameworkPropertyMetadata(false));
-            
         }
 
         [Bindable(true)]

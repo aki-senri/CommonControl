@@ -3,15 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:CommonControl.Controls">
 
-    <ControlTemplate x:Key="DefaultSelectTemplate" TargetType="{x:Type local:CustomComboBox}">
-        <ComboBox
-            x:Name="PART_ComboBox"
-            Foreground="{TemplateBinding Foreground}"
-            IsEditable="False"
-            ItemsSource="{TemplateBinding ItemsSource}"
-            SelectedIndex="{TemplateBinding SelectedIndex}"
-            SelectedItem="{TemplateBinding SelectedItem}" />
-    </ControlTemplate>
     <Style BasedOn="{StaticResource {x:Type ComboBox}}" TargetType="{x:Type local:CustomComboBox}">
         <Setter Property="IsDefaultIndex" Value="False" />
         <Setter Property="Template">
@@ -44,11 +35,6 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsDefaultIndex" Value="True">
-                <Setter Property="Template" Value="{StaticResource DefaultSelectTemplate}" />
-            </Trigger>
-        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>
