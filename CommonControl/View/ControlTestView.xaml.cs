@@ -27,11 +27,29 @@ namespace CommonControl.View
 
         private void CustomComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if ( sender is Controls.CustomComboBox combobox )
+            if (sender is ComboBox combobox)
             {
-                System.Diagnostics.Debug.WriteLine(combobox.IsDefaultIndex);
-                if (combobox.DefalutIndex == 0) combobox.DefalutIndex = 1;
-                if (combobox.DefalutIndex == 1) combobox.DefalutIndex = 0;
+                System.Diagnostics.Debug.WriteLine(combobox.SelectedIndex);
+            }
+            if ( sender is Controls.CustomComboBox customCombobox)
+            {
+                System.Diagnostics.Debug.WriteLine(customCombobox.IsDefaultIndex);
+                /*
+                if (combobox.IsDefaultIndex == false)
+                {
+                    combobox.IsDefaultIndex = true;
+                    return;
+                }
+                if (combobox.IsDefaultIndex == true) combobox.IsDefaultIndex = false;
+                */
+            }
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (sender is ComboBox combobox)
+            {
+                System.Diagnostics.Debug.WriteLine("ComboBox " + combobox.SelectedIndex);
             }
         }
     }
