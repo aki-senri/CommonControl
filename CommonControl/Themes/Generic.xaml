@@ -4,12 +4,13 @@
     xmlns:controls="clr-namespace:CommonControl.Controls">
 
     <Style BasedOn="{StaticResource {x:Type ComboBox}}" TargetType="{x:Type controls:CustomComboBox}">
-        <Setter Property="IsDefaultIndex" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:CustomComboBox}">
                     <Border
                         x:Name="PART_Border"
+                        Margin="-1"
+                        Background="{TemplateBinding BorderBrush}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
                         <ComboBox
@@ -17,8 +18,8 @@
                             Foreground="{TemplateBinding Foreground}"
                             IsEditable="False"
                             ItemsSource="{TemplateBinding ItemsSource}"
-                            SelectedIndex="{TemplateBinding SelectedIndex}"
-                            SelectedItem="{TemplateBinding SelectedItem}" />
+                            SelectedIndex="{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=SelectedIndex}"
+                            SelectedItem="{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=SelectedItem}" />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaultIndex" Value="False">
@@ -26,7 +27,6 @@
                             <Setter TargetName="PART_Border" Property="BorderThickness" Value="1" />
                         </Trigger>
                         <Trigger Property="IsDefaultIndex" Value="True">
-                            <Setter TargetName="PART_Border" Property="BorderBrush" Value="Gray" />
                             <Setter TargetName="PART_Border" Property="BorderThickness" Value="0" />
                         </Trigger>
                     </ControlTemplate.Triggers>

@@ -19,7 +19,11 @@ namespace CommonControl.Controls
         public int DefalutIndex
         {
             get { return (int)GetValue(DefalutIndexProperty); }
-            set { SetValue(DefalutIndexProperty, value); }
+            set
+            {
+                SetValue(DefalutIndexProperty, value);
+                IsDefaultIndex = SelectedIndex == DefalutIndex;
+            }
         }
 
         public bool IsDefaultIndex
@@ -32,6 +36,11 @@ namespace CommonControl.Controls
         {
             base.OnSelectionChanged(e);
 
+            IsDefaultIndex = SelectedIndex == DefalutIndex;
+        }
+
+        private void UpdateIsDefaultIndex()
+        {
             IsDefaultIndex = SelectedIndex == DefalutIndex;
         }
     }

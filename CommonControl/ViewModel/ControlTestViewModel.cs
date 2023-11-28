@@ -12,14 +12,14 @@ namespace CommonControl.ViewModel
     {
         public ObservableCollection<string> TestItems { get; set; } = new ObservableCollection<string>();
         public string SelectedItem { get; set; }
-        public int DefaultIndex { get; set; } = 0;
+        public Int32 DefaultIndex { get; set; } = 0;
 
         public ControlTestViewModel()
         {
             TestItems.Add("Item1");
             TestItems.Add("Item2");
             TestItems.Add("Item3");
-            SelectedItem = TestItems.ElementAt(DefaultIndex);
+            SelectedItem = TestItems[0];
         }
     }
 }
