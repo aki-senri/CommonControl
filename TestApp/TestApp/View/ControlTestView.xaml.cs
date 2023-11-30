@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CommonControl;
 
-namespace CommonControl.View
+namespace TestApp.View
 {
     /// <summary>
     /// ControlTestView.xaml の相互作用ロジック
@@ -31,7 +32,7 @@ namespace CommonControl.View
             {
                 System.Diagnostics.Debug.WriteLine(combobox.SelectedIndex);
             }
-            if ( sender is Controls.CustomComboBox customCombobox)
+            if ( sender is CommonControl.Controls.CustomComboBox customCombobox)
             {
                 System.Diagnostics.Debug.WriteLine(customCombobox.IsDefaultIndex);
                 /*

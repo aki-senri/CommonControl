@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommonControl.ViewModel
+namespace TestApp.ViewModel
 {
     internal class ControlTestViewModel : ViewModelBase
     {

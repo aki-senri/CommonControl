@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommonControl.ViewModel
+namespace TestApp.ViewModel
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
