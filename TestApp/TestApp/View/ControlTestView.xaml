@@ -13,18 +13,6 @@
     <UserControl.DataContext>
         <vm:ControlTestViewModel />
     </UserControl.DataContext>
-    <UserControl.Resources>
-        <Style x:Key="ForegroundPaint" TargetType="ComboBox">
-            <Style.Triggers>
-                <Trigger Property="SelectedIndex" Value="1">
-                    <Setter Property="Foreground" Value="Red" />
-                </Trigger>
-                <Trigger Property="SelectedIndex" Value="0">
-                    <Setter Property="Foreground" Value="Gray" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -39,6 +27,7 @@
             Width="200"
             Height="30"
             Margin="5"
+            HighlightColor="Blue"
             DefalutIndex="{Binding DefaultIndex}"
             ItemsSource="{Binding TestItems}"
             SelectedItem="{Binding SelectedItem}"

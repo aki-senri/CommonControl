@@ -10,8 +10,7 @@
                     <Border
                         x:Name="PART_Border"
                         Margin="-1"
-                        Background="{TemplateBinding BorderBrush}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderBrush="{TemplateBinding HighlightColor}"
                         BorderThickness="{TemplateBinding BorderThickness}">
                         <ComboBox
                             x:Name="PART_ComboBox"
@@ -23,7 +22,6 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaultIndex" Value="False">
-                            <Setter TargetName="PART_Border" Property="BorderBrush" Value="Red" />
                             <Setter TargetName="PART_Border" Property="BorderThickness" Value="1" />
                         </Trigger>
                         <Trigger Property="IsDefaultIndex" Value="True">

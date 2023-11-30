@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Media;
 
 
 namespace CommonControl.Controls
@@ -10,6 +11,7 @@ namespace CommonControl.Controls
     {
         public static readonly DependencyProperty DefalutIndexProperty = DependencyProperty.Register("DefalutIndex", typeof(int), typeof(CustomComboBox), new FrameworkPropertyMetadata(-1));
         public static readonly DependencyProperty IsDefaultIndexProperty = DependencyProperty.Register("IsDefaultIndex", typeof(bool), typeof(CustomComboBox), new FrameworkPropertyMetadata(false));
+        public static readonly DependencyProperty HighlightColorProperty = DependencyProperty.Register("HighlightColor", typeof(Brush), typeof(CustomComboBox), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.SubPropertiesDoNotAffectRender));
 
         static CustomComboBox()
         {
@@ -30,6 +32,12 @@ namespace CommonControl.Controls
         {
             get { return (bool)GetValue(IsDefaultIndexProperty); }
             set { SetValue(IsDefaultIndexProperty, value); }
+        }
+
+        public Brush HighlightColor
+        {
+            get { return (Brush)GetValue(HighlightColorProperty); }
+            set { SetValue(HighlightColorProperty, value); }
         }
 
         protected override void OnSelectionChanged(SelectionChangedEventArgs e)
