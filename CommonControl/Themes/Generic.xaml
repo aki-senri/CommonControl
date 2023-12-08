@@ -7,27 +7,13 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:CustomComboBox}">
-                    <Border
-                        x:Name="PART_Border"
-                        Margin="-1"
-                        BorderBrush="{TemplateBinding HighlightColor}"
-                        BorderThickness="{TemplateBinding BorderThickness}">
-                        <ComboBox
-                            x:Name="PART_ComboBox"
-                            Foreground="{TemplateBinding Foreground}"
-                            IsEditable="False"
-                            ItemsSource="{TemplateBinding ItemsSource}"
-                            SelectedIndex="{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=SelectedIndex}"
-                            SelectedItem="{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=SelectedItem}" />
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsDefaultIndex" Value="False">
-                            <Setter TargetName="PART_Border" Property="BorderThickness" Value="1" />
-                        </Trigger>
-                        <Trigger Property="IsDefaultIndex" Value="True">
-                            <Setter TargetName="PART_Border" Property="BorderThickness" Value="0" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
+                    <ComboBox
+                        x:Name="PART_ComboBox"
+                        Foreground="{TemplateBinding Foreground}"
+                        IsEditable="False"
+                        ItemsSource="{TemplateBinding ItemsSource}"
+                        SelectedIndex="{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=SelectedIndex}"
+                        SelectedItem="{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=SelectedItem}" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

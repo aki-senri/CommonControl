@@ -27,8 +27,9 @@
             Width="200"
             Height="30"
             Margin="5"
-            HighlightColor="Blue"
+            BorderThickness="2"
             DefalutIndex="{Binding DefaultIndex}"
+            HighlightColor="Blue"
             ItemsSource="{Binding TestItems}"
             SelectedItem="{Binding SelectedItem}"
             SelectionChanged="CustomComboBox_SelectionChanged" />
