@@ -32,7 +32,7 @@ namespace TestApp.View
             {
                 System.Diagnostics.Debug.WriteLine(combobox.SelectedIndex);
             }
-            if ( sender is CommonControl.Controls.CustomComboBox customCombobox)
+            if ( sender is CommonControl.Controls.NonDefaultHighlightComboBox customCombobox)
             {
                 System.Diagnostics.Debug.WriteLine(customCombobox.IsDefaultIndex);
                 /*

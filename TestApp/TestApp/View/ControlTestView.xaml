@@ -16,13 +16,14 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <controls:CustomComboBox
+        <controls:NonDefaultHighlightComboBox
             Grid.Row="0"
             Width="200"
             Height="30"
@@ -30,6 +31,17 @@
             BorderThickness="2"
             DefalutIndex="{Binding DefaultIndex}"
             HighlightColor="Blue"
+            ItemsSource="{Binding TestItems}"
+            SelectedItem="{Binding SelectedItem}"
+            SelectionChanged="CustomComboBox_SelectionChanged" />
+        <controls:NonDefaultHighlightComboBox
+            Grid.Column="1"
+            Width="200"
+            Height="30"
+            Margin="5"
+            BorderThickness="1"
+            DefalutIndex="{Binding DefaultIndex}"
+            HighlightColor="Red"
             ItemsSource="{Binding TestItems}"
             SelectedItem="{Binding SelectedItem}"
             SelectionChanged="CustomComboBox_SelectionChanged" />

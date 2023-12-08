@@ -5,20 +5,20 @@ using System.Windows.Media;
 
 namespace CommonControl.Controls
 {
-    public class CustomComboBox : ComboBox
+    public class NonDefaultHighlightComboBox : ComboBox
     {
-        public static readonly DependencyProperty DefalutIndexProperty = DependencyProperty.Register("DefalutIndex", typeof(int), typeof(CustomComboBox), new FrameworkPropertyMetadata(-1));
-        public static readonly DependencyProperty IsDefaultIndexProperty = DependencyProperty.Register("IsDefaultIndex", typeof(bool), typeof(CustomComboBox), new FrameworkPropertyMetadata(false));
-        public static readonly DependencyProperty HighlightColorProperty = DependencyProperty.Register("HighlightColor", typeof(Brush), typeof(CustomComboBox), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.SubPropertiesDoNotAffectRender));
+        public static readonly DependencyProperty DefalutIndexProperty = DependencyProperty.Register("DefalutIndex", typeof(int), typeof(NonDefaultHighlightComboBox), new FrameworkPropertyMetadata(-1));
+        public static readonly DependencyProperty IsDefaultIndexProperty = DependencyProperty.Register("IsDefaultIndex", typeof(bool), typeof(NonDefaultHighlightComboBox), new FrameworkPropertyMetadata(false));
+        public static readonly DependencyProperty HighlightColorProperty = DependencyProperty.Register("HighlightColor", typeof(Brush), typeof(NonDefaultHighlightComboBox), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.SubPropertiesDoNotAffectRender));
 
         private BorderAdorner _borderAdorner;
 
-        static CustomComboBox()
+        static NonDefaultHighlightComboBox()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CustomComboBox), new FrameworkPropertyMetadata(typeof(CustomComboBox)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(NonDefaultHighlightComboBox), new FrameworkPropertyMetadata(typeof(NonDefaultHighlightComboBox)));
         }
 
-        public CustomComboBox()
+        public NonDefaultHighlightComboBox()
         {
             Loaded += ComboBox_Loaded;
             SelectionChanged += (s, e) => UpdateIsDefaultIndex();
@@ -67,7 +67,7 @@ namespace CommonControl.Controls
 
         private void ComboBox_Loaded(object sender, RoutedEventArgs e)
         {
-            var comboBox = sender as CustomComboBox;
+            var comboBox = sender as NonDefaultHighlightComboBox;
             if (comboBox != null)
             {
                 AdornerLayer adornerLayer = AdornerLayer.GetAdornerLayer(comboBox);
