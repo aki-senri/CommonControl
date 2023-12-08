@@ -102,8 +102,6 @@ namespace CommonControl.Controls
 
         protected override void OnRender(DrawingContext dc)
         {
-            Rect adornedElementRect = new Rect(this.AdornedElement.RenderSize);
-
             var pen = new Pen();
             pen.Thickness = Thickness;
             pen.Brush = BoderBrush;
